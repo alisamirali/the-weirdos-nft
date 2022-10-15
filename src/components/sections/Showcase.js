@@ -23,6 +23,7 @@ const Section = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow-x: hidden;
 `;
 
 const move = keyframes`
@@ -48,6 +49,14 @@ const ImgContainer = styled.div`
   background-color: ${(props) => props.theme.body};
   border-radius: 20px;
   cursor: pointer;
+
+  @media (max-width: 48em) {
+    width: 12rem;
+  }
+
+  @media (max-width: 30em) {
+    width: 10rem;
+  }
 
   img {
     width: 100%;
@@ -76,6 +85,10 @@ const Details = styled.div`
     font-size: ${(props) => props.theme.fontmd};
     color: ${(props) => props.theme.body};
     font-weight: 600;
+
+    @media (max-width: 30em) {
+      font-size: ${(props) => props.theme.fontsm};
+    }
   }
 `;
 

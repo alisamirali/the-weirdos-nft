@@ -6,11 +6,11 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 
 const Section = styled.section`
   min-height: 100vh;
+  height: auto;
   width: 100vw;
   background-color: ${(props) => props.theme.text};
   color: ${(props) => props.theme.body};
   position: relative;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -26,6 +26,10 @@ const Title = styled.h1`
   margin: 1rem auto;
   border-bottom: 2px solid ${(props) => props.theme.body};
   width: fit-content;
+
+  @media (max-width: 48em) {
+    font-size: ${(props) => props.theme.fontxl};
+  }
 `;
 
 const Container = styled.div`
@@ -34,10 +38,30 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-content: center;
+
+  @media (max-width: 64em) {
+    width: 80%;
+  }
+
+  @media (max-width: 48em) {
+    width: 90%;
+    flex-direction: column;
+
+    & > *:last-child {
+      & > *:first-child {
+        margin-top: 0;
+      }
+    }
+  }
 `;
 
 const Box = styled.div`
   width: 45%;
+
+  @media (max-width: 64em) {
+    width: 90%;
+    align-self: center;
+  }
 `;
 
 const Faq = () => {
